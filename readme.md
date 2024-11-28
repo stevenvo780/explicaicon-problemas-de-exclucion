@@ -1,67 +1,89 @@
 ## Notas Importantes:
 
-- **Ajuste de Datos**: Las tasas de entrada y sanción de usuarios se han ajustado para reflejar los datos reales proporcionados (20 a 60 usuarios nuevos por mes y 3 a 12 baneos por mes).
-- **Aleatoriedad**: Se utiliza la función `random.randint` para introducir variabilidad en las entradas y sanciones, simulando fluctuaciones reales en la actividad de la comunidad.
-- **Duración de Sanciones**: Las sanciones temporales tienen duraciones de 1 a 3 meses, permitiendo la reintegración de usuarios sancionados en el escenario de solución.
-- **Visualización**: Ambos escenarios se grafican en la misma ventana para facilitar la comparación.
+- **Tasa de Baneos Ajustada**: En el sistema de exclusión, la tasa de baneos es más alta debido a la ambigüedad en las reglas. Se ha multiplicado la tasa base por un factor (en este caso, 2) para reflejar esto.
+
+- **Duraciones de Sanción**: Las sanciones temporales tienen duraciones de 1, 6 y 12 meses, con probabilidades asignadas de 70% para 1 mes, 20% para 6 meses y 10% para 12 meses, reflejando que las sanciones de 1 mes son más probables.
+
+- **Baneos Permanentes**: En el sistema de exclusión, los baneos son permanentes y más frecuentes que en el sistema solucionado.
+
+- **Reintegración**: En el sistema solucionado, los usuarios sancionados temporalmente pueden reintegrarse después de cumplir su sanción.
 
 ---
 
-## README: Explicación Científica del Ejercicio
+## README Actualizado: Explicación Científica del Ejercicio
 
 # Simulación de Gestión de Conflictos en Comunidades Virtuales
 
 Este proyecto presenta una simulación que modela el impacto de diferentes políticas de sanciones en la dinámica de una comunidad virtual. Se comparan dos escenarios:
 
-1. **Exclusión**: Aplicación de baneos permanentes sin posibilidad de reintegración.
-2. **Reintegración**: Uso de sanciones temporales que permiten a los usuarios sancionados regresar a la comunidad.
+1. **Exclusión**: Aplicación de baneos permanentes con una tasa de baneos más alta debido a la ambigüedad en las reglas y falta de tipificación.
+
+2. **Reintegración**: Uso de sanciones temporales con una tasa de baneos más baja, permitiendo a los usuarios sancionados regresar a la comunidad.
 
 ## Objetivo
 
-Analizar cómo las políticas de sanciones afectan el crecimiento y la cohesión de una comunidad virtual, utilizando un enfoque racional y basado en datos.
+Analizar cómo las políticas de sanciones afectan el crecimiento y la cohesión de una comunidad virtual, incorporando consideraciones como la probabilidad de diferentes duraciones de sanción y las tasas de baneo ajustadas según la claridad normativa.
 
 ## Fundamentos Científicos
 
 ### Teoría de Sistemas Sociales
 
-Las comunidades virtuales se pueden modelar como sistemas sociales complejos donde las interacciones entre individuos y las normas establecidas influyen en el comportamiento colectivo. Cambios en las políticas de sanciones pueden tener efectos significativos en la estructura y dinámica del sistema.
+Las comunidades virtuales son sistemas sociales complejos donde las normas y su claridad afectan significativamente el comportamiento de los individuos y el sistema en su conjunto. La ambigüedad normativa puede conducir a una mayor tasa de conflictos y sanciones.
 
 ### Teoría de Agentes
 
-Cada usuario se considera un agente individual con estados y comportamientos específicos. La teoría de agentes permite simular cómo las decisiones a nivel individual (por ejemplo, abandonar la comunidad tras ser sancionado) afectan al sistema en su conjunto.
+Los usuarios se modelan como agentes individuales que interactúan dentro del sistema, y cuyas acciones y estados (activo, sancionado, baneado) influyen en la dinámica global.
 
 ### Análisis de Redes Sociales
 
-La comunidad se representa mediante grafos, donde los nodos son usuarios y las aristas representan interacciones. Este enfoque facilita el análisis de la estructura de la comunidad y cómo evoluciona con el tiempo.
+La comunidad se representa mediante grafos para analizar cómo la estructura de la red cambia con diferentes políticas de sanciones y cómo afecta la cohesión de la comunidad.
 
 ## Descripción del Modelo
 
-- **Ingreso de Usuarios**: Cada mes, entre 20 y 60 nuevos usuarios se unen a la comunidad, reflejando el crecimiento orgánico.
-- **Sanciones**: Cada mes, entre 3 y 12 usuarios activos son sancionados, ya sea de forma permanente o temporal.
-  - **Exclusión**: Los usuarios sancionados son baneados permanentemente.
-  - **Reintegración**: Los usuarios sancionados temporalmente pueden reintegrarse tras cumplir su sanción.
+- **Ingreso de Usuarios**: Cada mes, entre 20 y 60 nuevos usuarios se unen a la comunidad.
+
+- **Sanciones**:
+  - **Exclusión**:
+    - Baneos permanentes.
+    - Tasa de baneos más alta debido a la ambigüedad en las reglas.
+  - **Reintegración**:
+    - Sanciones temporales de 1, 6 o 12 meses.
+    - Probabilidades de duración: 70% para 1 mes, 20% para 6 meses, 10% para 12 meses.
+    - Tasa de baneos más baja gracias a reglas claras y tipificadas.
+
 - **Estados de Usuarios**:
   - **Activo**: Usuario participando en la comunidad.
-  - **Sancionado Temporalmente**: Usuario temporalmente inactivo pero con posibilidad de regresar.
+  - **Sancionado Temporalmente**: Usuario inactivo por un período específico, con posibilidad de reintegración.
   - **Baneado Permanentemente**: Usuario expulsado sin posibilidad de retorno.
+
+## Consideraciones Adicionales
+
+- **Tasa de Baneos**:
+  - En el sistema de exclusión, la tasa de baneos es el doble que en el sistema solucionado para reflejar la mayor probabilidad de sanciones debido a la ambigüedad normativa.
+  - Se asegura que haya al menos entre 3 y 12 baneos por mes en ambos sistemas, acorde con los datos reales.
+
+- **Duraciones de Sanción**:
+  - Las sanciones temporales tienen duraciones de 1, 6 y 12 meses, con mayor probabilidad para las sanciones de menor duración.
 
 ## Interpretación de Resultados
 
-Los resultados de la simulación muestran cómo diferentes políticas afectan al tamaño y crecimiento de la comunidad:
+Los resultados muestran que:
 
 - **Exclusión**:
-  - El crecimiento es más lento debido a la pérdida permanente de usuarios.
-  - Puede generar una percepción negativa y disminuir la cohesión.
+  - La comunidad crece más lentamente y puede estancarse debido a la alta tasa de baneos permanentes.
+  - La ambigüedad en las reglas conduce a más conflictos y sanciones, afectando negativamente la cohesión.
+
 - **Reintegración**:
-  - Mantiene un crecimiento más estable y rápido.
-  - Promueve la rehabilitación y reduce la exclusión social.
-  - Mejora la cohesión al permitir que los usuarios aprendan de sus errores y continúen contribuyendo.
+  - La comunidad crece de manera más sostenida gracias a una menor tasa de baneos y la posibilidad de reintegración.
+  - Reglas claras y sanciones proporcionales reducen conflictos y mejoran la percepción de justicia entre los usuarios.
 
 ## Implicaciones Prácticas
 
-- **Políticas Inclusivas**: Implementar sanciones temporales favorece un ambiente más inclusivo y puede mejorar la retención de usuarios.
-- **Reducción de Conflictos**: La posibilidad de reintegración puede disminuir la hostilidad y el resentimiento entre usuarios sancionados.
-- **Cohesión Comunitaria**: Al mantener a más usuarios activos, se fortalece la red social y se fomenta un sentido de pertenencia.
+- **Claridad Normativa**: Establecer reglas claras y tipificadas reduce la tasa de baneos y mejora la gestión de conflictos.
+
+- **Sanciones Proporcionales**: Aplicar sanciones temporales con duraciones ajustadas a la gravedad de la falta promueve la rehabilitación y mantiene la cohesión comunitaria.
+
+- **Gestión Efectiva**: Un enfoque racional y basado en datos permite identificar fallas internas y desarrollar soluciones efectivas que beneficien al sistema en su conjunto.
 
 ## Cómo Ejecutar el Proyecto
 
@@ -80,18 +102,10 @@ Los resultados de la simulación muestran cómo diferentes políticas afectan al
    pip install cupy networkx matplotlib
    ```
 2. **Ejecutar el script**:
-   - Guarda el código en un archivo, por ejemplo, `simulacion_comunidad.py`.
+   - Guarda el código en un archivo, por ejemplo, `problema.py`.
    - Ejecuta el script:
      ```
      python simulacion_comunidad.py
      ```
 3. **Visualizar los resultados**:
    - Se generará una gráfica comparando ambos escenarios en la misma ventana.
-
-## Conclusión
-
-Esta simulación demuestra que las políticas de gestión de conflictos basadas en la reintegración y sanciones temporales pueden ser más efectivas para el crecimiento y cohesión de comunidades virtuales. Un enfoque racional y basado en datos permite tomar decisiones informadas que benefician al sistema en su conjunto.
-
----
-
-Espero que este script corregido y el README proporcionen una visión clara y científicamente respaldada del problema y su solución.
