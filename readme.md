@@ -1,17 +1,3 @@
-## Notas Importantes:
-
-- **Tasa de Baneos Ajustada**: En el sistema de exclusión, la tasa de baneos es más alta debido a la ambigüedad en las reglas. Se ha multiplicado la tasa base por un factor (en este caso, 2) para reflejar esto.
-
-- **Duraciones de Sanción**: Las sanciones temporales tienen duraciones de 1, 6 y 12 meses, con probabilidades asignadas de 70% para 1 mes, 20% para 6 meses y 10% para 12 meses, reflejando que las sanciones de 1 mes son más probables.
-
-- **Baneos Permanentes**: En el sistema de exclusión, los baneos son permanentes y más frecuentes que en el sistema solucionado.
-
-- **Reintegración**: En el sistema solucionado, los usuarios sancionados temporalmente pueden reintegrarse después de cumplir su sanción.
-
----
-
-## README Actualizado: Explicación Científica del Ejercicio
-
 # Simulación de Gestión de Conflictos en Comunidades Virtuales
 
 Este proyecto presenta una simulación que modela el impacto de diferentes políticas de sanciones en la dinámica de una comunidad virtual. Se comparan dos escenarios:
